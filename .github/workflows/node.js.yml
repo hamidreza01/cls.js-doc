@@ -43,6 +43,4 @@ jobs:
     - name: Copy To Branches Action
       uses: planetoftheweb/copy-to-branches@v1
       env:
-          branches: docs-deployed
-          key: main
           files: LICENSE.txt CNAME
