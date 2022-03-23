@@ -31,6 +31,12 @@ jobs:
     - name: Build
       run: npm run docs:build
   
+    - name: Copy CNAME
+      uses: canastro/copy-action@0.0.2
+      with:
+        source: "CNAME"
+        target: "docs/.vitepress/dist"
+  
     - name: Push
       uses: s0/git-publish-subdir-action@develop
       env:
@@ -39,8 +45,3 @@ jobs:
           FOLDER: docs/.vitepress/dist
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MESSAGE: "Build: ({sha}) {msg}"
-          
-    - name: Copy To Branches Action
-      uses: planetoftheweb/copy-to-branches@v1
-      env:
-          files: LICENSE.txt CNAME
