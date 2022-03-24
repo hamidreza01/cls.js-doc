@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /logo.svg
+heroImage: ./logo.svg
 heroAlt: Logo image
 heroText: cls.js
 tagline: A library for make terminal outputs more beautiful.
